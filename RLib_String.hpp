@@ -16,7 +16,7 @@ Will also allow symbolic constants that resolve to same. */
 # define __T(x)       u8 ## x
 # define _T(x)        __T(x)
 # define _C(x)        x
-# define _R(x)		 (System::STRInfo { _T(x), static_cast<intptr_t>(sizeof(_T(x)) - sizeof(TCHAR)) })
+# define _R(x)        (System::STRInfo { _T(x), static_cast<intptr_t>(sizeof(_T(x)) - sizeof(TCHAR)) })
 # define _tcslen      strlen
 # define _tcschr      strchr
 # define _tcsrchr     strrchr

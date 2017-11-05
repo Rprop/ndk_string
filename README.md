@@ -12,6 +12,8 @@ This implementation is from [RLib](https://github.com/rrrfff/RLib)
 
 # Example
 ```C++
+#include <jni.h>
+#include "RLib_String.hpp"
 void string_test(JNIEnv *env)
 {
 	String a = _T("Hello, 中国!");
