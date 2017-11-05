@@ -41,9 +41,9 @@ using namespace System;
 #define RLIB_ALIGN_UP(x, n)        (((x) + ((n) - 1)) & ~((n) - 1))
 #define RLIB_ALIGN_DOWN(x, n)      ((x) & -(n))
 #define RLIB_INTERNAL_CALC_ON_NEED (-1)
-#define TSIZE(len)			       static_cast<intptr_t>((len + 1) * sizeof(TCHAR))
-#define TSIZE_ALIGNED(len)	       RLIB_ALIGN_UP(TSIZE(len), RLIB_ALIGNMENT)
-#define StringTermAtBytes(s,n)     (*reinterpret_cast<TCHAR *>(reinterpret_cast<char *>(s) + n) = _C('\0'))
+#define TSIZE(len)                 static_cast<intptr_t>((len + 1) * sizeof(TCHAR))
+#define TSIZE_ALIGNED(len)         RLIB_ALIGN_UP(TSIZE(len), RLIB_ALIGNMENT)
+#define StringTermAtBytes(s, n)    (*reinterpret_cast<TCHAR *>(reinterpret_cast<char *>(s) + n) = _C('\0'))
 
 //-------------------------------------------------------------------------
 
