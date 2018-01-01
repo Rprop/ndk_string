@@ -1149,14 +1149,14 @@ inline intptr_t __IndexOf_impl(const TCHAR *lpstr, intptr_t len, intptr_t begin,
 
 intptr_t String::IndexOf(const TCHAR *p, intptr_t begin /* = 0 */) const
 {
-	return __IndexOf_impl<true>(this->m_pstr, this->m_len, begin, p);
+	return __IndexOf_impl<true>(this->m_pstr, this->GetLength(), begin, p);
 }
 
 //-------------------------------------------------------------------------
 
 intptr_t String::IndexOfNoCase(const TCHAR *p, intptr_t begin /* = 0 */) const
 {
-	return __IndexOf_impl<false>(this->m_pstr, this->m_len, begin, p);
+	return __IndexOf_impl<false>(this->m_pstr, this->GetLength(), begin, p);
 }
 
 //-------------------------------------------------------------------------
@@ -1188,7 +1188,7 @@ intptr_t String::LastIndexOf(const TCHAR *p) const
 
 intptr_t String::LastIndexOfL(const TCHAR *p, intptr_t len) const
 {
-	return __LastIndexOfL_impl<true, false>(this->m_pstr, this->m_len, p, len);
+	return __LastIndexOfL_impl<true, false>(this->m_pstr, this->GetLength(), p, len);
 }
 
 //-------------------------------------------------------------------------
@@ -1202,7 +1202,7 @@ intptr_t String::LastIndexOfNoCase(const TCHAR *p) const
 
 intptr_t String::LastIndexOfLNoCase(const TCHAR *p, intptr_t len) const
 {
-	return __LastIndexOfL_impl<false, false>(this->m_pstr, this->m_len, p, len);
+	return __LastIndexOfL_impl<false, false>(this->m_pstr, this->GetLength(), p, len);
 }
 
 //-------------------------------------------------------------------------
@@ -1252,7 +1252,7 @@ intptr_t String::LastIndexOfR(const TCHAR *p) const
 
 intptr_t String::LastIndexOfRL(const TCHAR *p, intptr_t len) const
 {
-	return __LastIndexOfL_impl<true, true>(this->m_pstr, this->m_len, p, len);
+	return __LastIndexOfL_impl<true, true>(this->m_pstr, this->GetLength(), p, len);
 }
 
 //-------------------------------------------------------------------------
@@ -1266,7 +1266,7 @@ intptr_t String::LastIndexOfRNoCase(const TCHAR *p) const
 
 intptr_t String::LastIndexOfRLNoCase(const TCHAR *p, intptr_t len) const
 {
-	return __LastIndexOfL_impl<false, true>(this->m_pstr, this->m_len, p, len);
+	return __LastIndexOfL_impl<false, true>(this->m_pstr, this->GetLength(), p, len);
 }
 
 //-------------------------------------------------------------------------
